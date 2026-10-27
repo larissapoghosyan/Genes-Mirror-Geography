@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="margin">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#fff6e5" />
+  <meta name="description" content="Can genetic differences reveal geography? Follow real measurements through quality control and PCA, then inspect the resemblance to Europe and its limits." />
+  <title>Genes Mirror Geography</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <script src="js/themes.js?v=clean-36"></script>
+  <link rel="stylesheet" href="css/styles.css?v=note-background-27" />
+  <link rel="stylesheet" href="css/margin.css?v=report-29" />
+  <link rel="stylesheet" href="css/research-panel.css?v=workspace-24" />
+  <link rel="stylesheet" href="css/bio-zoom.css?v=selective-stage-labels-34" />
+  <link rel="stylesheet" href="css/daylight.css?v=daylight-61" />
+</head>
+<body data-scene="1" data-beat="1">
+  <a class="skip-story" href="#story">Skip to the story</a>
+  <header class="apple-top-bar">
+    <nav class="dynamic-island" aria-label="Story chapters">
+      <a href="#act-1" class="hud-step active" data-target-act="1">Question</a>
+      <a href="#act-3" class="hud-step" data-target-act="3">Measure</a>
+      <a href="#act-7" class="hud-step" data-target-act="7">Reduce</a>
+      <a href="#act-9" class="hud-step" data-target-act="9">Reveal</a>
+      <a href="#act-12" class="hud-step" data-target-act="12">Inspect</a>
+    </nav>
+    <div class="action-island">
+      <button class="island-btn mode-btn active" id="btn-narrative-mode" aria-pressed="true" aria-label="The narrative"><span class="mode-label-long">The narrative</span><span class="mode-label-short">Narrative</span></button>
+      <button class="island-btn mode-btn" id="btn-research-mode" aria-pressed="false" aria-expanded="false" aria-controls="science-dialog" aria-label="Split-Screen: Research and Code"><span class="mode-label-long">Split-Screen: Research &amp; Code</span><span class="mode-label-short">Research &amp; Code</span></button>
+    </div>
+  </header>
+  <div class="reading-progress" aria-hidden="true"><span id="reading-progress"></span></div>
+  <div id="stage-wrapper">
+    <canvas id="atlas-canvas" role="img" aria-label="An illustrated zoom from Europe into a person, cells, and DNA, followed by real genotype calls and PCA. The illustrated person is not an identified study participant; the opening geography is not an input to PCA.">Read the accompanying story and the research notebook for the figures and numerical results.</canvas>
+    <svg id="bio-zoom-stage" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid meet" aria-hidden="true" style="visibility:hidden"></svg>
+  </div>
+  <aside class="map-zoom-controls" aria-label="Map zoom and view controls" hidden>
+    <button class="zoom-btn" id="btn-zoom-in" title="Zoom in" aria-label="Zoom in">+</button>
+    <button class="zoom-btn" id="btn-zoom-out" title="Zoom out" aria-label="Zoom out">−</button>
+    <button class="zoom-btn" id="btn-zoom-fit" title="Full dataset" aria-label="Full dataset">◎</button>
+    <button class="zoom-btn" id="btn-zoom-reset" title="Reset view" aria-label="Reset view">↺</button>
+  </aside>
+  <p id="map-navigation-hint" class="map-navigation-hint">Scroll to begin the story</p>
+  <div id="sample-tooltip" role="status"></div>
+  <main class="scrolly-container" id="story">
+    <section class="act-section active documentary-intro" id="act-1" data-act="1" data-visual-stops="0:1,1:2" data-notebook-anchor="Geographic-structure-in-European-genetic-variation" data-code-anchor="From-genotype-calls-to-a-genetic-map" aria-labelledby="title-1">
+      <div class="glass-card">
+        <h1 id="title-1">Does DNA encode more than biology?</h1>
+        <p>Put two human genomes side by side, and more than 99% of their letters match. What remains seems almost too small to notice. Yet across millions of letters it stores a staggering archive of information. These quiet variations tell us not only how our species evolved, but about the very world in which that evolution unfolded.</p>
+        <a class="story-next intro-next" href="#act-2">Follow the evidence <span aria-hidden="true">↓</span></a>
+        <nav class="reviewer-jumps" aria-label="Research">
+          <a href="../research/genes_mirror_geography_replication.html" target="_blank" rel="noopener">Inspect the math &amp; code</a>
+        </nav>
+        <p class="scene-footnote">Independent replication of Novembre et al. (2008) on the AADR v66 dataset. The opening map sets the scene and is never given to the algorithm; technical details and code are available anytime via <strong>Split-Screen: Research &amp; Code</strong> above.</p>
+      </div>
+    </section>
+    <section class="act-section" id="act-2" data-act="2" data-visual-stops="0:2,0.08:2.45,0.38:3,0.46:3.45,0.80:4,0.90:4.45,1:5" data-notebook-anchor="1.-Data-and-study-design" data-code-anchor="2.-Turning-a-SNP-into-a-number" aria-labelledby="title-2">
+      <div class="glass-card">
+        <div class="act-eyebrow">01 · LOOK CLOSER</div>
+        <h2 id="title-2">From the map we know<br>to the map we carry</h2>
+      </div>
+    </section>
+    <section class="act-section" id="act-3" data-act="3" data-visual-stops="0:5,0.06:5.45,0.22:6,0.30:6.45,0.50:7,0.68:7.55,1:8" data-notebook-anchor="2.-Genotypes-and-marker-quality-control" data-code-anchor="2.-Turning-a-SNP-into-a-number" aria-labelledby="title-3">
+      <div class="glass-card">
+        <div class="act-eyebrow">02 · FROM LETTERS TO NUMBERS</div>
+        <h2 id="title-3">Turning biology into data</h2>
+        <p class="act-deck">Two chromosomes. One simple count.</p>
+        <p>Because human genomes are overwhelmingly alike, this analysis focuses on <strong>SNPs</strong>—precise genomic positions where our DNA letters vary.</p>
+        <p>Zoom into one of these sites, and we compare the two chromosome copies inherited from our parents. Here, the participant inherited <strong>an A from one parent and a G from the other</strong>. (Down at the molecular level, the complementary strands pair A with T, and G with C.)</p>
+        <p>To turn this physical biology into computable data, we simply count a target letter. Tracking copies of <strong>G</strong>, this <strong>AG genotype yields exactly 1</strong>. That single integer then slots into our matrix, filling one cell in this individual's row under the SNP's column.</p>
+        <fieldset class="dosage-control">
+          <legend>Observed AG · try other genotypes at this site</legend>
+          <div class="dosage-options">
+            <button class="btn-action" id="btn-dosage-0" data-dosage="0" aria-pressed="false">AA</button>
+            <button class="btn-action active" id="btn-dosage-1" data-dosage="1" aria-pressed="true">AG</button>
+            <button class="btn-action" id="btn-dosage-2" data-dosage="2" aria-pressed="false">GG</button>
+          </div>
+          <p id="dosage-result" aria-live="polite" aria-atomic="true">AG: one G allele → count 1 (Person 01’s real genotype).</p>
+        </fieldset>
+        <p class="micro-note"><a href="https://www.genome.gov/genetics-glossary/Single-Nucleotide-Polymorphisms-SNPs" target="_blank" rel="noopener">SNP definition</a></p>
+        <a class="story-next" href="#act-4">Build the data matrix <span aria-hidden="true">→</span></a>
+      </div>
+    </section>
+    <section class="act-section" id="act-4" data-act="4" data-visual-stops="0:8,0.12:8.45,0.60:9,0.82:9.45,1:10" data-notebook-anchor="2.-Genotypes-and-marker-quality-control" data-code-anchor="2.1-How-the-binary-file-becomes-that-matrix" aria-labelledby="title-4">
+      <div class="glass-card">
+        <div class="act-eyebrow">03 · THE DATA MATRIX</div>
+        <h2 id="title-4">996 rows<br>Thousands of columns</h2>
+        <p>That single computed integer drops into Row 01. Repeat the process across thousands of DNA sites, and a single person’s genetic signature emerges.</p>
+        <p>Stack all 996 participants together, and the transition is complete. Biology scales into a massive computational matrix where every single cell is a pure <strong>0, 1, or 2</strong>.</p>
+        <p class="micro-note">Technical note: decoded from packed 2-bit TGENO binary records. The raw array captures 276,725 markers, filtering down to 46,213 QC-passed sites. The visualization shows a 24-marker excerpt for all 996 participants.</p>
+        <a class="story-next" href="#act-5">Clean the measurements <span aria-hidden="true">→</span></a>
+      </div>
+    </section>
+    <section class="act-section" id="act-5" data-act="5" data-visual-stops="0:10,1:11" data-notebook-anchor="2.-Genotypes-and-marker-quality-control" data-code-anchor="3.-Quality-control:-choose-measurements-that-enter-the-PCA-algorithm?" aria-labelledby="title-5">
+      <div class="glass-card">
+        <div class="act-eyebrow">04 · CLEANING THE TABLE</div>
+        <h2 id="title-5">Filtering 276,725 markers<br>down to <span data-snp-count>46,213</span>.</h2>
+        <p>Before searching for geographic patterns, we rigorously clean the matrix. We drop sites with missing measurements and filter out rare variants shared by too few people.</p>
+        <p>Crucially, DNA is inherited in connected chunks. If we kept every neighboring site, those linked blocks would mathematically echo the same ancestral signal over and over. To prevent this distortion, we thin out adjacent markers that merely repeat one another.</p>
+        <p class="micro-note">Technical note: excludes sex chromosomes and high-LD inversions. Requires 100% call completeness and minor-allele frequency (MAF) ≥ 5% in our 407-person core QC panel. Applies sliding-window LD pruning (50-marker windows, step 5, r² &gt; 0.20).</p>
+        <a class="story-next" href="#act-6">Put the columns on a fair scale <span aria-hidden="true">→</span></a>
+      </div>
+    </section>
+    <section class="act-section" id="act-6" data-act="6" data-visual-stops="0:11,1:12" data-notebook-anchor="3.-Reference-normalization-and-principal-components" data-code-anchor="4.-Why-center-and-divide-by-$%5Csqrt%7B2p(1-p)%7D$?" aria-labelledby="title-6">
+      <div class="glass-card">
+        <div class="act-eyebrow">05 · STANDARDIZATION</div>
+        <h2 id="title-6">Leveling the playing field</h2>
+        <p>Not every genetic difference carries the same weight. Sharing a less common variant with someone can be a stronger clue about shared ancestry. Sharing a common variant carried by half the cohort tells us very little on its own.</p>
+        <p>If we fed raw counts into PCA, common variants would usually have greater numerical spread and could drown out less common ones. We correct this by comparing each count with the frequency in a fixed European reference panel, then scaling each column so less common variants can be heard.</p>
+        <p class="micro-note">Technical note: Patterson scaling (based on Hardy–Weinberg equilibrium). For each SNP, <em>p</em> is the allele frequency in a fixed 428-person reference panel. We subtract <strong>2p</strong> from each genotype count and divide by <math xmlns="http://www.w3.org/1998/Math/MathML" aria-label="square root of 2 p times 1 minus p"><msqrt><mrow><mn>2</mn><mi>p</mi><mo>(</mo><mn>1</mn><mo>−</mo><mi>p</mi><mo>)</mo></mrow></msqrt></math>, its expected standard deviation.</p>
+        <a class="story-next" href="#act-7">What does PCA actually do? <span aria-hidden="true">→</span></a>
+      </div>
+    </section>
+    <section class="act-section" id="act-7" data-act="7" data-visual-stops="0:12,1:13" data-notebook-anchor="3.-Reference-normalization-and-principal-components" data-code-anchor="5.-PCA-starts-with-a-direction-and-a-projection" aria-labelledby="title-7">
+      <div class="glass-card">
+        <div class="act-eyebrow">06 · DIMENSIONALITY REDUCTION</div>
+        <h2 id="title-7">Finding the best angle to look at the data</h2>
+        <p>You cannot visualize a 46,213-dimensional spreadsheet. But you can spin it until you find the best angle to look at it.</p>
+        <p><strong>Principal Component Analysis (PCA)</strong> rotates the data to find the direction that captures the widest spread of the group (<strong>PC1</strong>). Then it finds the best perpendicular direction (<strong>PC2</strong>), giving the cloud a flat, 2D shape—like a complex 3D object casting a 2D shadow on a wall.</p>
+        <p>Before applying this to human genetics, try finding the best viewing angle for this simple 2D cloud of height and arm length:</p>
+        <div class="control-buttons">
+          <button class="btn-action" id="btn-toy-first">Find the first direction</button>
+          <button class="btn-action" id="btn-toy-second">Add the second</button>
+        </div>
+        <p class="micro-note" id="toy-description" aria-live="polite">An illustrative example. These are not the genetic measurements.</p>
+        <a class="story-next" href="#act-8">Apply this to the real genetic data <span aria-hidden="true">→</span></a>
+      </div>
+    </section>
+    <section class="act-section" id="act-8" data-act="8" data-visual-stops="0:13,1:14" data-notebook-anchor="3.-Reference-normalization-and-principal-components" data-code-anchor="6.1-Follow-one-person-into-the-coordinate-plane" aria-labelledby="title-8">
+      <div class="glass-card">
+        <div class="act-eyebrow">07 · THE COMPRESSION</div>
+        <h2 id="title-8">46,213 columns collapse into a 2D dot.</h2>
+        <p>Now we unleash that exact algorithm on the real genetic matrix. For every person, the computer compresses their 46,213 standardized DNA measurements into just two master scores: a horizontal position (<strong>PC1</strong>) and a vertical position (<strong>PC2</strong>).</p>
+        <p>About 46,000 biological measurements collapse into a single dot on a blank grid. And here is the crucial detail: <strong>zero geographic coordinates</strong> entered this calculation.</p>
+        <p class="micro-note">Technical note: principal directions are learned via singular value decomposition (SVD) on the 428-person reference panel. Each person’s normalized row of 46,213 calls is then multiplied by the top two loading vectors to project their <strong>(PC1, PC2)</strong> coordinates.</p>
+        <a class="story-next" href="#act-9">Pause with the raw point cloud <span aria-hidden="true">→</span></a>
+      </div>
+    </section>
+    <section class="act-section" id="act-9" data-act="9" data-visual-stops="0:14,1:15" data-notebook-anchor="3.-Reference-normalization-and-principal-components" data-code-anchor="7.-What-does-dimensionality-reduction-throw-away?" aria-labelledby="title-9">
+      <div class="glass-card">
+        <div class="act-eyebrow">08 · THE UNSUPERVISED STRUCTURE</div>
+        <h2 id="title-9">A continent in the noise<br>0.96% of variance.</h2>
+        <p>Together, our two master axes capture less than one percent (<strong>0.96%</strong>) of the standardized genetic variance in the reference panel. Most human genetic variation lies within populations rather than between them; these axes isolate only a thin layer of between-region structure.</p>
+        <p>Yet across <strong>46,213 markers</strong>, that fractional percentage carries a powerful spatial echo. As the matrix gives way to a cloud of dots, we color them using the participants’ recorded regional labels. The data settles into its mathematical shape, and a familiar architecture emerges from the noise.</p>
+        <p class="micro-note">Technical note: PC1 (0.58%) and PC2 (0.38%) explain 0.96% of reference-panel genetic variance. Regional colors are metadata added only for visual interpretation; they played no role in fitting PCA. This is the unrotated distribution before Procrustes alignment. Explained variance is not geographic prediction accuracy.</p>
+        <a class="story-next" href="#act-10">How do we know which way is north? <span aria-hidden="true">→</span></a>
+      </div>
+    </section>
+    <section class="act-section" id="act-10" data-act="10" data-visual-stops="0:15,1:16" data-notebook-anchor="4.-One-global-geographic-alignment" data-code-anchor="9.-Orienting-the-shape" aria-labelledby="title-10">
+      <div class="glass-card">
+        <div class="act-eyebrow">09 · ORIENTING THE COMPASS</div>
+        <h2 id="title-10">PCA has no North.</h2>
+        <p>The algorithm found a structure that resembles a continent, but it does not know which way is up. PCA’s axis signs are arbitrary: the genetic map has no geographic North, South, East, or West.</p>
+        <p>To orient it against geography, we apply one global adjustment to the entire cloud: rotate it by <strong>−117.2 degrees</strong>, shift it, and scale it uniformly. Every single dot receives the same treatment. There is no selective stretching, warping, or country-by-country nudging. The genetic structure simply spins into alignment with the geographic reference.</p>
+        <p class="micro-note">Technical note: alignment uses a global Procrustes similarity transform (translation, rotation, uniform scaling) fitted on 52 regional population centroids. The fit uses recorded and assigned locality coordinates and allows a global reflection to account for PC sign ambiguity.</p>
+        <div class="compass-slider">
+          <div class="slider-header"><label for="angle-slider">Rotate the point cloud</label><output id="angle-display" for="angle-slider" class="angle-readout">0°</output></div>
+          <input type="range" class="apple-slider" id="angle-slider" min="-180" max="0" step="0.1" value="0" aria-label="Rotate the genetic point cloud" />
+        </div>
+        <a class="story-next" href="#act-11">Now reveal the regions <span aria-hidden="true">→</span></a>
+      </div>
+    </section>
+    <section class="act-section" id="act-11" data-act="11" data-visual-stops="0:16,0.30:16.45,0.62:17,0.86:17.45,1:18" data-notebook-anchor="5.-Geographic-correspondence" data-code-anchor="10.-Correlation,-error-and-explained-variance-answer-different-questions" aria-labelledby="title-11">
+      <div class="glass-card">
+        <div class="act-eyebrow">10 · THE REVEAL</div>
+        <h2 id="title-11">Genes mirror geography</h2>
+        <p class="act-deck">Without drawing a single coastline, the data forms a map.</p>
+        <p>Every dot keeps the same position relative to every other dot. As faint color washes and two-letter country codes identify the participants’ recorded regions, the genetic point cloud traces the recognizable shape of Europe.</p>
+        <p>The math confirms the visual: genetic coordinates and geography correlate at <strong>r = 0.861 East–West</strong> and <strong>r = 0.881 North–South</strong>. This is a pattern consistent with <strong>isolation by distance</strong>. Over generations, people often lived, moved, and formed families locally, linking genetic similarity to the landscape.</p>
+        <p class="micro-note">Technical note: color-wash shapes are smoothed from genetic PCA positions; their colors and the country codes come from regional metadata. PCA receives no map target, though the later alignment uses geography. Correlations describe the aligned cohort, not held-out prediction. No coastline is drawn over the genetic points. The small Europe inset is a separate regional color key.</p>
+        <a class="story-next" href="#act-12">Challenge the resemblance <span aria-hidden="true">→</span></a>
+      </div>
+    </section>
+    <section class="act-section" id="act-12" data-act="12" data-visual-stops="0:18,1:18" data-notebook-anchor="6.-Reference-sensitivity" data-code-anchor="11.-Why-the-reference-panel-matters" aria-labelledby="title-12">
+      <div class="glass-card">
+        <div class="act-eyebrow">11 · SCIENTIFIC STRESS TESTS</div>
+        <h2 id="title-12">Where the mirror bends</h2>
+        <h3 class="stress-heading">1. Reference sensitivity</h3>
+        <p>Toggle between our quota-balanced <strong>428-person reference</strong> and an equal-weight fit on all <strong>996 people</strong>. Spain and Italy together make up <strong>43% of the cohort</strong>. Watch how that sampling imbalance shifts the axes: the East–West correlation falls from <strong>0.861 to 0.812</strong>.</p>
+        <fieldset class="reference-control">
+          <legend>Who learns the PCA directions?</legend>
+          <div class="reference-options">
+            <button class="btn-action active" id="btn-reference-fixed" aria-pressed="true">428-person reference</button>
+            <button class="btn-action" id="btn-reference-all" aria-pressed="false">All 996 equally weighted</button>
+          </div>
+          <p id="reference-description" aria-live="polite">Original fit · all people projected into the reference space.</p>
+          <div class="fit-metrics" id="reference-metrics"></div>
+        </fieldset>
+        <div class="control-buttons">
+          <button class="btn-action" id="btn-morph-gps">Locality coordinates</button>
+          <button class="btn-action" id="btn-toggle-vectors">Coordinate differences</button>
+        </div>
+        <p class="micro-note" id="inspection-note" aria-live="polite">Some locality coordinates are assigned proxies. The connecting lines compare positions; they are not migration routes.</p>
+        <h3 class="stress-heading">2. Descriptive versus predictive</h3>
+        <p>A clear geographic pattern is not a precise genetic GPS. In earlier <strong>634-person experiments</strong> using 50 PCs, out-of-sample models still had mean locality errors of about <strong>425 km (neural)</strong> and <strong>458 km (linear)</strong>. PCA reveals structure; it does not guarantee exact individual prediction.</p>
+        <div class="research-links"><a href="../research/genes_mirror_geography_replication.html" data-open-research="research">Technical report</a><a href="../research/genes_mirror_geography_math_code.html" data-open-research="code">Maths &amp; code walkthrough</a><a href="../research/results/stats/human_origins_pca_results.csv" download>Download the coordinates (CSV) ↓</a><a href="visual-credits.html">Visual credits</a></div>
+        <p class="author-credit">Research and visual story by <strong>Larisa Poghosyan</strong></p>
+      </div>
+    </section>
+  </main>
+  <div id="research-resizer" class="research-resizer" role="separator" aria-label="Research panel width" aria-orientation="vertical" aria-controls="story science-dialog" aria-valuemin="32" aria-valuemax="62" aria-valuenow="45" aria-valuetext="45 percent research, 55 percent narrative" tabindex="0" hidden><span aria-hidden="true"></span></div>
+  <aside class="research-panel" id="science-dialog" role="complementary" aria-labelledby="science-title" hidden>
+    <header class="research-panel-header">
+      <h2 id="science-title">Research &amp; code</h2>
+      <div class="research-panel-actions">
+        <label class="research-follow-toggle" title="When enabled, scrolling the narrative moves this notebook to its matching section"><input type="checkbox" id="research-follow"> Sync to story</label>
+        <button class="research-fullscreen" id="btn-research-fullscreen" type="button" aria-pressed="false">Full screen</button>
+        <button class="research-close" id="btn-close-research" type="button" aria-label="Close research panel and return to the narrative">← Story</button>
+      </div>
+    </header>
+    <div class="research-tabs" role="tablist" aria-label="Notebook versions">
+      <button id="tab-research" class="research-tab" role="tab" aria-selected="true" aria-controls="notebook-research" tabindex="0" data-notebook="research">Technical report</button>
+      <button id="tab-code" class="research-tab" role="tab" aria-selected="false" aria-controls="notebook-code" tabindex="-1" data-notebook="code">Maths &amp; code</button>
+    </div>
+    <div class="notebook-container">
+      <p class="notebook-loading" id="notebook-loading" role="status" hidden>Loading the notebook…</p>
+      <div id="notebook-research" class="notebook-tabpanel" role="tabpanel" aria-labelledby="tab-research">
+        <iframe id="frame-research" title="Technical report notebook, synchronized with the narrative" data-notebook-src="../research/genes_mirror_geography_replication.html"></iframe>
+      </div>
+      <div id="notebook-code" class="notebook-tabpanel" role="tabpanel" aria-labelledby="tab-code" hidden>
+        <iframe id="frame-code" title="Mathematics and code walkthrough, synchronized with the narrative" data-notebook-src="../research/genes_mirror_geography_math_code.html"></iframe>
+      </div>
+    </div>
+    <footer class="research-panel-footer"><a id="notebook-external" href="../research/genes_mirror_geography_replication.html" target="_blank" rel="noopener">Open this notebook in a new tab</a></footer>
+  </aside>
+
+  <script src="data/genome_atlas.js?v=research-11"></script>
+  <script src="data/europe_inset.js?v=research-11"></script>
+  <script src="data/study_diagnostics.js?v=research-11"></script>
+  <script src="vendor/d3-ease-sine.js?v=motion-12"></script>
+  <script src="js/visual-sources.js?v=motion-12"></script>
+  <script async src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <script src="js/helix-geometry.js?v=helix-15"></script>
+  <script src="js/rotating-dna.js?v=chromosome-dive-59"></script>
+  <script src="data/bio_marker.js?v=observed-ag-57"></script>
+  <script src="data/bio_matrix.js?v=observed-ag-57"></script>
+  <script src="data/bio_package.js?v=italy-46"></script>
+  <script src="js/bio-route.js?v=rounded-map-62"></script>
+  <script src="js/bio-package.js?v=zip-35"></script>
+  <script src="js/bio-zoom.js?v=helix-caption-70"></script>
+  <script src="js/app.js?v=final-map-caption-76"></script>
+  <script src="js/research-panel.js?v=research-workspace-39"></script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+# Operating system and editor files
+.DS_Store
+.AppleDouble
+.LSOverride
+*.swp
+*.swo
+
+# Python and Jupyter caches
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.pytest_cache/
+.mypy_cache/
+.venv/
+venv/
+node_modules/
+.env
+.env.*
+
+# Local AADR inputs and computed working tables
+**/*.geno
+**/*.snp
+**/*.ind
+**/*.anno
+**/*.bed
+**/*.bim
+**/*.fam
+**/*.vcf
+**/*.vcf.gz
+**/*.bcf
+**/*.pgen
+**/*.pvar
+**/*.psam
+research/data/raw/*
+!research/data/raw/europe.geojson
+!research/data/raw/world_land_50m.geojson
+research/data/processed/
+research/data/qc/
+
+# Local material that is not part of the public source repository
+dataset_access/
+local/
+research/Genes_mirror_geography_within_Europe.pdf
+
+# Notebook scratch output and static release
+research/results/notebook/
+research/results/teaching_notebook/
+research/results/stats/*.log
+dist/

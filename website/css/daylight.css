@@ -1,0 +1,95 @@
+/* A light illustrated science world, continuous from the cover to the atlas. */
+:root {
+  --bg:#fff6e5; --paper:rgba(255,251,242,.96); --border:#c8d9d2;
+  --ink:#213d50; --secondary:#3e5968; --muted:#4e6572; --accent:#ac4d43;
+  --heading:'Inter',Arial,sans-serif; --control-bg:rgba(255,251,242,.96);
+  --control-hover:#e6f1e8; --control-active:#f9dfcd; --control-active-ink:#8b3e37;
+  --button-bg:#fffbf2; --surface:#eaf2e8; --primary-ink:#fffaf1;
+}
+.site-wordmark { font:800 1.05rem var(--heading); letter-spacing:-.055em; }
+.dynamic-island,.action-island { border:1px solid var(--border); border-radius:100px; padding:4px; }
+.hud-step,.island-btn { border-radius:100px; }
+.act-section::before { background:#8ebbb0; opacity:.55; }
+.glass-card { border-top-color:#8ebbb0; background:var(--paper); padding:1.6rem 1.25rem; border-radius:0 22px 22px 22px; }
+.glass-card::before { color:#4c857e; }
+.glass-card h1,.glass-card h2 { font-weight:800; letter-spacing:-.055em; line-height:1.06; }
+.glass-card h2 { font-size:clamp(2rem,2.9vw,3.1rem); }
+#act-3 .glass-card { width:min(540px,40vw); }
+#act-4 .glass-card { width:min(530px,38vw); padding-right:5rem; }
+#act-3 .glass-card,#act-4 .glass-card { background:rgba(255,251,242,.4); }
+#act-5 .glass-card { width:min(550px,40vw); background:rgba(255,251,242,.4); }
+#act-5 .glass-card h2 { font-size:clamp(1.9rem,2.5vw,2.75rem); white-space:nowrap; }
+#act-5 .glass-card p { max-width:85%; }
+#act-6 .glass-card { width:min(500px,37vw); background:rgba(255,251,242,.4); }
+#act-7 .glass-card { width:min(500px,37vw); background:rgba(255,251,242,.4); }
+#act-7 .glass-card h2 { font-size:clamp(1.75rem,2.3vw,2.6rem); line-height:1.16; letter-spacing:-.04em; }
+#act-8 .glass-card { width:min(520px,38vw); background:rgba(255,251,242,.4); }
+#act-8 .glass-card h2 { font-size:clamp(1.8rem,2.4vw,2.7rem); line-height:1.14; }
+#act-8 .glass-card p { max-width:88%; }
+#act-9 .glass-card { width:min(580px,42vw); background:rgba(255,251,242,.4); }
+#act-9 .glass-card h2 { font-size:clamp(1.9rem,2.45vw,2.75rem); line-height:1.13; }
+#act-10 .glass-card { width:min(500px,37vw); background:rgba(255,251,242,.4); }
+#act-11 .glass-card,#act-12 .glass-card { width:min(550px,40vw); background:rgba(255,251,242,.4); }
+#act-4 .glass-card h2 { font-size:clamp(1.9rem,2.5vw,2.75rem); white-space:nowrap; text-wrap:nowrap; }
+#act-3 .act-deck { margin-top:-.25rem; color:var(--ink); font-size:1rem; font-weight:700; line-height:1.4; }
+#act-11 .act-deck { margin-top:-.25rem; color:var(--ink); font-size:1rem; font-weight:700; line-height:1.4; }
+.act-eyebrow { color:#9b483e; font-weight:700; letter-spacing:.1em; }
+.documentary-intro .glass-card { width:min(700px,51vw); padding:0; background:transparent; border-radius:0; }
+.documentary-intro h1 { font-size:clamp(3.1rem,4.9vw,5.6rem); line-height:1.035; letter-spacing:-.065em; }
+.documentary-intro p { max-width:570px; }
+.documentary-intro .act-eyebrow { display:inline-block; padding:7px 12px; border-radius:100px; background:#ffe8cf; }
+.documentary-intro .scene-footnote { max-width:570px; margin-top:1.5rem; padding:.85rem 1rem; background:#eaf2e8; border-left:3px solid #6fa79c; border-radius:0 12px 12px 0; color:#294c58; font-size:.76rem; line-height:1.65; }
+#act-1.documentary-intro { min-height:100svh; padding-top:clamp(92px,12svh,124px); padding-bottom:max(12px,env(safe-area-inset-bottom)); align-items:flex-end; }
+#act-1 .glass-card { transform:translateY(-32px); }
+#act-1 .scene-footnote { margin-bottom:0; }
+#act-2 .glass-card { width:min(620px,48vw); padding:0; background:transparent; border:0; border-radius:0; box-shadow:none; }
+#act-2 .glass-card h2 { margin-bottom:0; font-size:clamp(2.3rem,3.6vw,4rem); line-height:1.1; text-shadow:none; }
+.author-credit { margin-top:2rem; padding-top:.9rem; border-top:1px solid var(--border); color:var(--muted); font-size:.76rem; }
+.btn-action,.voyager-chip,.math-formula,.dosage-control { border-radius:14px; }
+.story-next { font-weight:700; }
+.map-zoom-controls,.map-navigation-hint { background:var(--control-bg); border-color:var(--border); }
+.research-panel { background:#fffbf2; }
+.research-panel-header h2 { font:800 1.45rem/1.1 var(--heading); letter-spacing:-.05em; }
+@media (max-width:1100px) {
+  .documentary-intro .glass-card { width:55vw; }
+}
+@media (max-width:900px) {
+  .site-wordmark { font-size:1rem; }
+  #act-1.documentary-intro { padding-top:clamp(105px,17svh,145px); padding-bottom:max(10px,env(safe-area-inset-bottom)); align-items:flex-end; }
+  .documentary-intro .glass-card { width:100%; background:rgba(255,251,242,.94); padding:1.4rem 1rem; border-radius:24px; }
+  .documentary-intro h1 { font-size:clamp(2.6rem,8.5vw,4.2rem); }
+  .documentary-intro .act-eyebrow { font-size:.51rem; }
+  #act-1 .glass-card { padding:1rem; }
+  #act-1 h1 { margin-bottom:.7rem; }
+  #act-1 .glass-card > p:not(.scene-footnote) { font-size:.9rem; line-height:1.52; margin-bottom:.55rem; }
+  #act-1 .intro-next { min-height:36px; margin-top:0; padding:.35rem 0; }
+  #act-1 .reviewer-jumps { margin-top:0; }
+  #act-1 .reviewer-jumps a { min-height:28px; }
+  #act-1 .scene-footnote { margin-top:.7rem; padding:.65rem .8rem; font-size:.72rem; line-height:1.48; }
+  #act-2 .glass-card { width:100%; padding:0; background:transparent; }
+  #act-2 .glass-card h2 { font-size:clamp(2.1rem,6.6vw,3rem); }
+  #act-3 .glass-card { width:100%; }
+  #act-4 .glass-card { width:100%; padding-right:1rem; }
+  #act-5 .glass-card { width:100%; }
+  #act-5 .glass-card h2 { font-size:clamp(1.4rem,5vw,2.2rem); white-space:normal; }
+  #act-5 .glass-card p { max-width:100%; }
+  #act-6 .glass-card { width:100%; }
+  #act-7 .glass-card { width:100%; }
+  #act-7 .glass-card h2 { font-size:clamp(1.5rem,5.5vw,2.2rem); line-height:1.18; }
+  #act-8 .glass-card { width:100%; }
+  #act-8 .glass-card h2 { font-size:clamp(1.45rem,5vw,2.2rem); }
+  #act-8 .glass-card p { max-width:100%; }
+  #act-9 .glass-card { width:100%; }
+  #act-9 .glass-card h2 { font-size:clamp(1.3rem,5.2vw,2.2rem); }
+  #act-10 .glass-card { width:100%; }
+  #act-11 .glass-card,#act-12 .glass-card { width:100%; }
+  #act-4 .glass-card h2 { font-size:clamp(1.2rem,5vw,2.2rem); }
+  .glass-card { padding:1.4rem 1rem; }
+}
+body.research-split .documentary-intro .glass-card { background:var(--paper); border-radius:22px; padding:1.25rem; }
+@media (max-width:900px) and (max-height:800px) {
+  #act-1.documentary-intro { padding-top:105px; padding-bottom:max(8px,env(safe-area-inset-bottom)); }
+  #act-1 h1 { font-size:clamp(2.2rem,7.5vw,2.6rem); }
+  #act-1 .glass-card > p:not(.scene-footnote) { font-size:.84rem; line-height:1.4; }
+  #act-1 .scene-footnote { font-size:.69rem; line-height:1.42; padding:.55rem .7rem; }
+}

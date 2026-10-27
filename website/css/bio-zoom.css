@@ -1,0 +1,21 @@
+/* Biology shares the persistent stage and the exact Canvas drawing coordinates. */
+#bio-zoom-stage { position:absolute; inset:0; width:100%; height:100%; overflow:hidden; pointer-events:none; }
+/* Retain the 30% slowdown, then reduce opening camera speed a further 40%. */
+#act-2 { min-height:calc(375svh / .7 / .6); align-items:flex-start; }
+#act-2 .glass-card { position:sticky; top:55svh; }
+#act-3 { min-height:180svh; }
+#act-4 { min-height:147.5svh; }
+body.research-split #act-3 { min-height:200svh; }
+body.research-split #act-4 { min-height:175svh; }
+@media (min-width:1101px) {
+  body:not(.research-split) #act-2 .glass-card { position:sticky; top:max(140px,20svh); }
+}
+@media (max-width:1100px) {
+  body.research-split #act-3, body.research-split #act-4 { min-height:162.5svh; }
+}
+@media (max-width:900px) {
+  #act-2 { min-height:calc(400svh / .7 / .6); }
+  #act-2 .glass-card h2 { font-size:clamp(1.65rem,5vw,2.2rem); }
+  #act-2 .glass-card p { font-size:.82rem; line-height:1.65; }
+  #act-3, #act-4 { min-height:162.5svh; }
+}

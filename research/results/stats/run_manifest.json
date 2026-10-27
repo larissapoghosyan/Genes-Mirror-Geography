@@ -1,0 +1,64 @@
+{
+  "metrics": {
+    "subset": "all",
+    "cohort_size": 996,
+    "populations": 52,
+    "r_EastWest_Longitude": 0.861460584556224,
+    "r_NorthSouth_Latitude": 0.8812994657260069,
+    "r_centroid_EastWest": 0.9165952783172884,
+    "r_centroid_NorthSouth": 0.9002380159444364,
+    "snps_analyzed": 46213,
+    "reference_size": 428,
+    "restored_samples": 362,
+    "procrustes_disparity": 0.1949049992008069,
+    "procrustes_similarity": 0.8972708625600149
+  },
+  "python": "3.14.7",
+  "packages": {
+    "numpy": "2.5.2",
+    "pandas": "3.0.5",
+    "scipy": "1.18.1",
+    "scikit-learn": "1.9.0",
+    "matplotlib": "3.11.1"
+  },
+  "inputs": {
+    "research/data/raw/v66.p1_compatibility_HO.aadr.patch.PUB.geno": {
+      "bytes": 1909008156,
+      "sha256": "27b3bf9eab1708284cbea5dc032dff32f0eab6be3f05dd8de90f167a6c00dcb8"
+    },
+    "research/data/raw/v66.p1_compatibility_HO.aadr.patch.PUB.ind": {
+      "bytes": 1176253,
+      "sha256": "51f99bee3667b5c3a97b663cc12fd3e25486cf64049782657d99db347b65509e"
+    },
+    "research/data/raw/v66.p1_compatibility_HO.aadr.patch.PUB.snp": {
+      "bytes": 17433675,
+      "sha256": "74582cfb2cde3943dcb969a3e80a2cdb711d6f2635e95c3adddaaf3a31fe1bbd"
+    },
+    "research/data/raw/v66.p1_compatibility_HO.aadr.PUB.anno": {
+      "bytes": 15465906,
+      "sha256": "57f93730b0e408d2c29e0e3a1bd53b0c3c618fcbac22f498154de6335e5e415e"
+    },
+    "research/pipeline/run_human_origins_pca.py": {
+      "bytes": 37657,
+      "sha256": "c7ad48844a8d35d50432aaa8f68958ca002915066eaa850d8621c7f4addebb1e"
+    },
+    "research/pipeline/cohort_reference.json": {
+      "bytes": 20167,
+      "sha256": "52af594de100a882fb6527c3b507153ca7582febb7f51e473edf359f75107bf7"
+    }
+  },
+  "seed": 42,
+  "ld": {
+    "window_snps": 50,
+    "step_snps": 5,
+    "r2_threshold": 0.2,
+    "chromosome_local": true
+  },
+  "sample_call_rate_min": 0.956911353191738,
+  "coordinate_sources": {
+    "AADR annotation": 775,
+    "Assigned locality proxy": 114,
+    "Assigned Tuscany proxy": 107
+  },
+  "caveat": "Historical cohort exclusions and reference weights retained, not independently validated; this is not an unbiased sample of Europe or an exact POPRES replication."
+}

@@ -1,0 +1,3 @@
+fit,cohort_size,populations,r_EastWest_Longitude,r_NorthSouth_Latitude,r_centroid_EastWest,r_centroid_NorthSouth
+Frozen 428-person reference,996,52,0.861460584556224,0.8812994657260069,0.9165952783172884,0.9002380159444364
+"Equal weight, all 996 people",996,52,0.8119282152966882,0.8768546027875621,0.8372691366577372,0.8761137493695544

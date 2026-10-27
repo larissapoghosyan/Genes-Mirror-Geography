@@ -1,0 +1,2 @@
+cohort_size,populations,snps_analyzed,r_EastWest_Longitude,p_EastWest_Longitude,r2_EastWest_Longitude,r_NorthSouth_Latitude,p_NorthSouth_Latitude,r2_NorthSouth_Latitude,r_centroid_EastWest,r_centroid_NorthSouth,procrustes_disparity,procrustes_similarity
+634,52,46207,0.8741075249857209,2.3047556324683727e-200,0.7640639652366626,0.8765021206242555,7.964440305310687e-203,0.7682559674588169,0.9278956754607961,0.9083554404394181,0.2607555460971019,0.8597932623037343
