@@ -43,23 +43,11 @@ python3 research/pipeline/export_notebook_versions.py
 
 Both `.ipynb` files already contain saved tables and figures directly below their cells. The first setup cell only verifies inputs and creates scratch folders; later cells produce inline results and populate those folders. The notebook HTML files show the saved results without requiring the raw inputs. Canonical summary tables and figures are in `research/results/`. The [run manifest](research/results/stats/run_manifest.json) records source hashes, settings, and software versions.
 
-## Website and release
+## Website
 
-The website is plain HTML, CSS, SVG, Canvas, and JavaScript. The scroll position drives a reversible biological zoom and scientific figure; the final point cloud does not draw a coastline. Its research panel opens the two notebook HTML versions alongside the story.
+  [Explore the interactive story](https://larissapoghosyan.github.io/Genes-Mirror-
+  Geography/website/). The site and its linked research notebooks are served from the
+  `main` branch through GitHub Pages.
 
-GitHub Pages serves `website/` and its linked `research/` files directly from the `main` branch. For a self-contained static release on another host, run:
-
-```bash
-python3 research/pipeline/build_submission.py
-```
-
-The output is `dist/`, which is ignored by Git. Deploy the **contents** of `dist/` as a static site; the builder checks local links and notebook anchors. The command does not publish anything.
-
-Run the main interaction checks with:
-
-```bash
-node website/tests/story_integrity.cjs
-REDUCED_MOTION=1 node website/tests/story_integrity.cjs
-```
-
-The current source is in `website/`, `research/`, and the selected scientific results. Local raw data and generated working output remain outside the public Git set through [.gitignore](.gitignore).
+  The source is in `website/` and `research/`. Raw datasets and local working files are
+  excluded from the public repository through [.gitignore](.gitignore).
