@@ -1,5 +1,7 @@
 # Genes Mirror Geography
 
+ [View the interactive website](https://larissapoghosyan.github.io/Genes-Mirror-Geography/website/)
+
 An interactive, scroll driven account of a computational genetics study by Larisa Poghosyan. The project asks whether genetic variation among Europeans forms a recognizable geographic pattern when principal component analysis (PCA) receives no map, coastline, or country label.
 
 The study analyzes **996 modern European individuals** from AADR v66 at **46,213 quality controlled, LD pruned SNPs**. PCA directions are learned from a fixed **428 person reference panel**; all 996 people are projected into that space. Geographic coordinates enter later, to orient the completed point cloud with one global similarity transform and to evaluate the result. This is an adaptation of Novembre et al. (2008), *Genes mirror geography within Europe*, using a different cohort and genotyping platform.
