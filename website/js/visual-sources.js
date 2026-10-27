@@ -1,5 +1,4 @@
 // Original, externally authored assets. Load before they enter the story.
-// Servier Medical Art originals are credited on visual-credits.html.
 window.BIOLOGY_ART = {};
 (() => {
   if (typeof Image === 'undefined') return;
