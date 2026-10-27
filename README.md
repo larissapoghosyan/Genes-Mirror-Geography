@@ -8,7 +8,8 @@ The study analyzes **996 modern European individuals** from AADR v66 at **46,213
 
 ## Explore
 
-- [Interactive story](website/index.html) — the biological zoom, genotype matrix, PCA, map reveal, and sensitivity controls.
+- [Interactive story](website/index.html) — an illustrated zoom into
+  DNA, genotype matrix, PCA, map reveal, and sensitivity controls.
 - [Technical report](research/genes_mirror_geography_replication.html) and [research notebook](research/genes_mirror_geography_replication.ipynb) — methods, experiments, results, and limitations.
 - [Maths and code walkthrough](research/genes_mirror_geography_math_code.html) and [teaching notebook](research/genes_mirror_geography_math_code.ipynb) — worked explanations of the computation.
 
